@@ -15,3 +15,20 @@ D:\Documents\GitHub\DBFZ Profile Viewer\DBFZ Profile Viewer\bin\Debug\Memory.xml
 D:\Documents\GitHub\DBFZ Profile Viewer\DBFZ Profile Viewer\obj\Debug\DBFZ Profile Viewer.csproj.CopyComplete
 D:\Documents\GitHub\DBFZ Profile Viewer\DBFZ Profile Viewer\obj\Debug\DBFZ Profile Viewer.exe
 D:\Documents\GitHub\DBFZ Profile Viewer\DBFZ Profile Viewer\obj\Debug\DBFZ Profile Viewer.pdb
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\bin\Debug\DBFZ Profile Viewer.exe.config
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\bin\Debug\DBFZ Profile Viewer.exe
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\bin\Debug\DBFZ Profile Viewer.pdb
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\bin\Debug\Memory.dll
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\bin\Debug\Memory.pdb
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\bin\Debug\Memory.xml
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\obj\Debug\DBFZ Profile Viewer.csproj.AssemblyReference.cache
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\obj\Debug\DBFZTrainer.HelpForm.resources
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\obj\Debug\DBFZTrainer.AboutForm.resources
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\obj\Debug\DBFZTrainer.MainForm.resources
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\obj\Debug\DBFZTrainer.PlayerInfoForm.resources
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\obj\Debug\DBFZ Profile Viewer.Properties.Resources.resources
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\obj\Debug\DBFZ Profile Viewer.csproj.GenerateResource.cache
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\obj\Debug\DBFZ Profile Viewer.csproj.CoreCompileInputs.cache
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\obj\Debug\DBFZ Pro.020324A1.Up2Date
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\obj\Debug\DBFZ Profile Viewer.exe
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\obj\Debug\DBFZ Profile Viewer.pdb

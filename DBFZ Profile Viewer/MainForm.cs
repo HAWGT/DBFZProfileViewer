@@ -17,14 +17,16 @@ namespace DBFZTrainer
         private Mem m = new Mem();
         private const string procName = "RED-Win64-Shipping";
         private long  profileAddress = 0x0;
-        private const long profilePointer = 0x008C7FE0;
-        private const long playerNameOffset = 0x2E0;
-        private const long steamIDOffset = 0x2F0;
+        private const long basePointer = 0x1440E6FF8; //48 89 5C 24 08 48 89 74 24 10 57 48 83 EC ? 48 8D 99 F8 02 00 00
+        private const long offset0 = 0x120;
+        private const long offset1 = 0xC50;
+        private const long playerNameOffset = 0x300;
+        private const long steamIDOffset = 0x310;
         private readonly long[] playerStatsOffsets = new long[] {
             //RANKED      CASUAL        ARENA         RING
-            0x310, 0x314, 0x334, 0x338, 0x344, 0x348, 0x34C, 0x350,
+            0x330, 0x334, 0x354, 0x358, 0x364, 0x368, 0x36C, 0x370,
             //RING PARTY  FOLLOWERS Z UNION
-            0x354, 0x358, 0xE68, 0xE78
+            0x374, 0x378, 0xE88, 0xE98
         };
         private int[] stats = {
             0, 0, 0, 0, 0, 0, 0, 0,
@@ -32,7 +34,7 @@ namespace DBFZTrainer
         };
         private List<long> playersFound = new List<long>();
         private const int matchHistoryMaxCount = 10;
-        private const long matchHistoryOffset = 0xBE8;
+        private const long matchHistoryOffset = 0xC08;
         private const long matchMemSize = 0x40;
         private const long matchPlayerNameOffset = 0x0; //To make it easier to read and update
         private const long matchSteamIDOffset = 0x10;
@@ -132,18 +134,22 @@ namespace DBFZTrainer
                     if (profileAddress == 0x0)
                     {
                         long address = 0;
+                        long layer0 = 0;
+                        long layer1 = 0;
                         long testSteamID = 0;
                         //Find true profile address
                         //It keeps pointing to different addresses and to find the right one we need to try to parse it to a long and see if it is a *valid* steam id
                         try
                         {
-                            address = m.ReadLong(Convert.ToString(profilePointer, 16));
+                            layer0 = m.ReadLong(Convert.ToString(basePointer, 16));
+                            layer1 = m.ReadLong(Convert.ToString(layer0 + offset0, 16));
+                            address = m.ReadLong(Convert.ToString(layer1 + offset1, 16));
                             testSteamID = m.ReadLong(Convert.ToString(address + steamIDOffset, 16));
                         } catch
                         {
                             
                         }
-                        if (testSteamID > 0x110000000000000 && testSteamID < 0x110001000000000) //Check if Steam ID is valid
+                        if (testSteamID > 0x110000000000000 && testSteamID < 0x120000000000000) //Check if Steam ID is valid
                         {
                             profileAddress = address;
                             btn_open_profile.Invoke((MethodInvoker)delegate
@@ -180,7 +186,7 @@ namespace DBFZTrainer
                             {
                                 steamID = 0;
                             }
-                            if (steamID > 0x110000000000000 && steamID < 0x110001000000000)
+                            if (steamID > 0x110000000000000 && steamID < 0x120000000000000)
                             {
                                 playerName = m.ReadString(Convert.ToString(profileAddress + matchHistoryOffset + matchPlayerNameOffset + (matchMemSize * i), 16), "", 16);
                                 redPoint = m.ReadByte(Convert.ToString(profileAddress + matchHistoryOffset + matchCharactersOffsets[0] + (matchMemSize * i), 16));
@@ -197,7 +203,7 @@ namespace DBFZTrainer
                             }
                         }
 
-                        if (lastSteamID <= 0x110000000000000 || lastSteamID >= 0x110001000000000)
+                        if (lastSteamID <= 0x110000000000000 || lastSteamID >= 0x120000000000000)
                         {
                             profileAddress = 0x0;
                         }
@@ -234,7 +240,7 @@ namespace DBFZTrainer
 
         private void btn_open_profile_Click(object sender, EventArgs e)
         {
-            if (lastSteamID > 0x110000000000000 && lastSteamID < 0x110001000000000)
+            if (lastSteamID > 0x110000000000000 && lastSteamID < 0x120000000000000)
             {
                 Process.Start("http://steamcommunity.com/profiles/" + txt_steamid.Text);
             }
@@ -242,7 +248,7 @@ namespace DBFZTrainer
 
         private void btn_info_Click(object sender, EventArgs e)
         {
-            if (lastSteamID > 0x110000000000000 && lastSteamID < 0x110001000000000)
+            if (lastSteamID > 0x110000000000000 && lastSteamID < 0x120000000000000)
             {
                 playerInfoForm = new PlayerInfoForm(playerInfo, this);
                 playerInfoForm.Show();
