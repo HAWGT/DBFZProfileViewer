@@ -32,3 +32,4 @@ F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\obj\Debug\DBFZ Profile Vie
 F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\obj\Debug\DBFZ Pro.020324A1.Up2Date
 F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\obj\Debug\DBFZ Profile Viewer.exe
 F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\obj\Debug\DBFZ Profile Viewer.pdb
+F:\Source\Repos\DBFZProfileViewer\DBFZ Profile Viewer\obj\Debug\DBFZ Profile Viewer.exe.config
